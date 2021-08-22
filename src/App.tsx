@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Navbar } from "./components/nav/Navbar";
+import { Footer } from "./components/footer/Footer";
+import { Route, Routes } from "react-router";
+import { Login } from "./components/login/login";
+import { Register } from "./components/register/Register";
+import { PrivateRoute } from "./components/privateRoutes/PrivateRoutes";
+import { PlayQuiz } from "./components/quiz/PlayQuiz";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        {/* <PrivateRoute auth={true} element={<Login />} path="/" /> */}
+        {/* <PrivateRoute auth={false} element={<Register />} path="/" /> */}
+      </Routes>
+      <PlayQuiz />
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }
