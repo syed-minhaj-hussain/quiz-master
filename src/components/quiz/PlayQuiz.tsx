@@ -59,7 +59,7 @@ export const PlayQuiz = () => {
   };
   const [state, dispatch] = useReducer(quizReducer, {
     score: 0,
-    currentQuestion: 1,
+    currentQuestion: 0,
     disabled: false,
     disableNext: false,
   });
