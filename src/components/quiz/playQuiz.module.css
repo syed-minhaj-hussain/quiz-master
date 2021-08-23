@@ -18,7 +18,7 @@
 }
 .card {
   width: 420px;
-  height: 500px;
+  height: 550px;
   border: 0.1rem solid #000;
   margin: 1rem auto;
   padding: 1rem;
@@ -29,17 +29,42 @@
   position: relative;
 }
 .head {
-  height: 35%;
+  height: 55%;
 }
 .body {
-  height: 65%;
+  height: 45%;
 }
 .heading {
   font-size: 2rem;
   font-weight: bolder;
 }
+
+.score {
+  max-width: 100px;
+  margin: 0.2rem auto;
+  height: 100px;
+  padding: 0.1rem;
+  background-color: #90342b;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+}
+.score > p {
+  position: absolute;
+  top: 39%;
+  left: 0.5rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+.currentQuestion {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
 .question {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-size: 1.5rem;
   font-weight: 500;
 }
