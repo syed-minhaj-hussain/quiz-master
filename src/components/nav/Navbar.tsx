@@ -14,7 +14,7 @@ export const Navbar = () => {
 
   return (
     <nav className={navStyle.navbar}>
-      <div className={navStyle.brandTitle}>Clink-Player</div>
+      <div className={navStyle.brandTitle}>Quiz-Panel</div>
       <button
         className={navStyle.toggleButton}
         onClick={() => setIsActive((prev) => !prev)}
