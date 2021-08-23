@@ -68,7 +68,7 @@ export const PlayQuiz = () => {
       <div className={playQuizModule.container}>
         <div className={playQuizModule.card}>
           <div className={playQuizModule.head}>
-            <h1 className={playQuizModule.heading}>Quiz Master</h1>
+            <h1 className={playQuizModule.heading}>Quiz Panel</h1>
             <div className={playQuizModule.score}>
               <p>Score : {state.score}</p>
             </div>
