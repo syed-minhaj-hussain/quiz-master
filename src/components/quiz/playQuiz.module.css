@@ -86,15 +86,21 @@
   color: #000;
   border: 0.1rem solid #000;
 }
-.btn.left {
+.left {
   position: absolute;
   width: 20%;
   left: 1rem;
   bottom: 1rem;
 }
-.btn.right {
+.right {
   position: absolute;
   width: 20%;
   right: 1rem;
   bottom: 1rem;
+}
+.center {
+  position: absolute;
+  width: 40%;
+  right: 28%;
+  bottom: 2rem;
 }
