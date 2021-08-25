@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import logStyle from "./login.module.css";
