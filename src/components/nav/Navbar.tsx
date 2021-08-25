@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import navStyle from "./nav.module.css";
-// import { useAuthContext } from "../../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import { FaHistory } from "react-icons/fa";
 import { FaListAlt } from "react-icons/fa";
 import { MdWatchLater } from "react-icons/md";
@@ -10,7 +10,7 @@ import { ImHome } from "react-icons/im";
 
 export const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
-  //   const { auth, logout } = useAuthContext();
+  const { auth, logout } = useAuthContext();
 
   return (
     <nav className={navStyle.navbar}>
@@ -62,7 +62,7 @@ export const Navbar = () => {
               <FaListAlt style={{ fontSize: "1.25rem" }} />
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to="/history"
               activeStyle={{
@@ -77,8 +77,8 @@ export const Navbar = () => {
             >
               <FaHistory style={{ fontSize: "1.1rem" }} />
             </NavLink>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <NavLink
               to="/watchLater"
               activeStyle={{
@@ -109,8 +109,8 @@ export const Navbar = () => {
             >
               <FaListAlt style={{ fontSize: "1.25rem" }} />
             </NavLink>
-          </li>
-          {/* <li className={`${auth ? `${navStyle.logout}` : ""} `}>
+          </li> */}
+          <li className={`${auth ? `${navStyle.logout}` : ""} `}>
             {auth ? (
               <button
                 className={navStyle.last}
@@ -136,7 +136,7 @@ export const Navbar = () => {
                 Login
               </NavLink>
             )}
-          </li> */}
+          </li>
         </ul>
       </div>
     </nav>

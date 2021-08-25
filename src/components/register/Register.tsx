@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useAuthContext } from "../../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import regStyle from "./register.module.css";
 
 export const Register = () => {
-  //   const { auth, register } = useAuthContext();
+  const { auth, register } = useAuthContext();
   const [text, setText] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -21,7 +21,7 @@ export const Register = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                // register(text, email, password);
+                register(text, email, password);
                 setEmail("");
                 setText("");
                 setPassword("");

@@ -1,6 +1,6 @@
 import { Route, Navigate } from "react-router-dom";
 export type PrivateRouteType = {
-  auth: boolean;
+  auth: string | null;
   element: React.ReactElement;
   path: string;
 };

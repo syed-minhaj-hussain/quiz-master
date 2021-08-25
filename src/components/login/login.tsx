@@ -2,23 +2,22 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import { useAuthContext } from "../../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import logStyle from "./login.module.css";
 
 export const Login = () => {
-  //   const { isUserLoggedIn, login } = useAuthContext();
   const [text, setText] = useState("");
   const [password, setPassword] = useState("");
   const { state } = useLocation();
   const navigate = useNavigate();
-  //   const { auth, setAuth } = useAuthContext();
-  //   console.log({ isUserLoggedIn });
+  const { auth, login } = useAuthContext();
+  console.log({ auth });
 
-  //   useEffect(() => {
-  //     if (auth) {
-  //       navigate("/");
-  //     }
-  //   }, []);
+  useEffect(() => {
+    if (auth) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <>
@@ -31,7 +30,9 @@ export const Login = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                // login(text, password, state?.from);
+
+                login(text, password, state);
+
                 // console.log(val);
                 setText("");
                 setPassword("");
