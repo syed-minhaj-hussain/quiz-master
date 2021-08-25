@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
 import { quiz } from "../quizDB";
+import { Quiz, Question, Option } from "../utilities/quiz.types";
 
 type providerValue = {
   state: stateType;
@@ -30,47 +31,48 @@ type ACTIONTYPE =
       type: "NEXT-QUESTION";
     };
 
-const quizReducer = (state: stateType, action: ACTIONTYPE): stateType => {
-  switch (action.type) {
-    case "RESET":
-      return { ...state, score: 0, currentQuestion: 0, disabled: false };
-    case "RIGHT-ANSWER":
-      return {
-        ...state,
-        score: state.score + action?.payload?.score,
-        disabled: action?.payload?.disabled,
-      };
-    case "WRONG-ANSWER":
-      return {
-        ...state,
-        score: state.score - action?.payload?.score,
-        disabled: action?.payload?.disabled,
-      };
-    case "NEXT-QUESTION":
-      if (state.currentQuestion === quiz.questions.length - 1) {
-        return {
-          ...state,
-          disableNext: true,
-        };
-      }
-      return {
-        ...state,
-        currentQuestion: state.currentQuestion + 1,
-        disableNext: false,
-        disabled: false,
-      };
-    default:
-      return state;
-  }
-};
-
 export const QuizProvider: React.FC = ({ children }) => {
+  const [quizState, setQuizState] = useState<Quiz>(quiz);
   const [state, dispatch] = useReducer(quizReducer, {
     score: 0,
     currentQuestion: 0,
     disabled: false,
     disableNext: false,
   });
+
+  function quizReducer(state: stateType, action: ACTIONTYPE): stateType {
+    switch (action.type) {
+      case "RESET":
+        return { ...state, score: 0, currentQuestion: 0, disabled: false };
+      case "RIGHT-ANSWER":
+        return {
+          ...state,
+          score: state.score + action?.payload?.score,
+          disabled: action?.payload?.disabled,
+        };
+      case "WRONG-ANSWER":
+        return {
+          ...state,
+          score: state.score - action?.payload?.score,
+          disabled: action?.payload?.disabled,
+        };
+      case "NEXT-QUESTION":
+        if (state.currentQuestion === quizState?.questions?.length - 1) {
+          return {
+            ...state,
+            disableNext: true,
+          };
+        }
+        return {
+          ...state,
+          currentQuestion: state.currentQuestion + 1,
+          disableNext: false,
+          disabled: false,
+        };
+      default:
+        return state;
+    }
+  }
 
   return (
     <QuizContext.Provider value={{ state, dispatch }}>
