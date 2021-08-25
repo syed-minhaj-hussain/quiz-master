@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
@@ -8,7 +9,12 @@ export const Register = () => {
   const [text, setText] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (auth) {
+      navigate("/");
+    }
+  }, []);
   return (
     <>
       <div className={regStyle.container}>
