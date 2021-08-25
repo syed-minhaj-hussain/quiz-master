@@ -49,7 +49,7 @@ export const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/likedVideos"
+              to="/quizzes"
               activeStyle={{
                 fontWeight: "bold",
                 color: "#333",
@@ -59,7 +59,7 @@ export const Navbar = () => {
               className={navStyle.navLinks}
               onClick={() => setIsActive((prev) => !prev)}
             >
-              <AiFillLike style={{ fontSize: "1.25rem" }} />
+              <FaListAlt style={{ fontSize: "1.25rem" }} />
             </NavLink>
           </li>
           <li>
