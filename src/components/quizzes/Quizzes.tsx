@@ -1,12 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
 import quizzesModule from "./quizzes.module.css";
 import rules from "./rules.svg";
+import { quiz, quizTwo } from "../../quizDB";
+import { useQuiz } from "../../context/QuizContext";
 
 export const Quizzes = () => {
+  const { auth } = useAuthContext();
+  const { setQuizState } = useQuiz();
+  const navigate = useNavigate();
   return (
     <div>
       <div className={quizzesModule.container}>
         <header className={quizzesModule.header}>
+          <h1 className={quizzesModule.mobileHeading}>RULES : </h1>
           <img src={rules} alt="" className={quizzesModule.image} />
           <div>
             <h1 className={quizzesModule.heading}>RULES : </h1>
@@ -37,19 +44,31 @@ export const Quizzes = () => {
       <main className={quizzesModule.mainContainer}>
         <div className={quizzesModule.card}>
           <h1 className={quizzesModule.cardHeading}>Quiz-1</h1>
-          <Link to="/playQuiz" className={quizzesModule.link}>
+          <Link
+            to="/playQuiz"
+            className={quizzesModule.link}
+            onClick={() => {
+              if (auth) {
+                return setQuizState(quiz);
+              }
+              navigate("/login");
+            }}
+          >
             Play Now
           </Link>
         </div>
         <div className={quizzesModule.card}>
           <h1 className={quizzesModule.cardHeading}>Quiz-2</h1>
-          <Link to="/playQuiz" className={quizzesModule.link}>
-            Play Now
-          </Link>
-        </div>
-        <div className={quizzesModule.card}>
-          <h1 className={quizzesModule.cardHeading}>Quiz-3</h1>
-          <Link to="/playQuiz" className={quizzesModule.link}>
+          <Link
+            to="/playQuiz"
+            className={quizzesModule.link}
+            onClick={() => {
+              if (auth) {
+                return setQuizState(quizTwo);
+              }
+              navigate("/login");
+            }}
+          >
             Play Now
           </Link>
         </div>

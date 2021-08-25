@@ -56,3 +56,39 @@
   color: #fff;
   border: 0.1rem solid #3f3d56;
 }
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 1px auto;
+    height: 80vh;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+  .image {
+    max-width: 390px;
+  }
+  .btn {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 480px;
+    margin: 2px auto;
+    /* height: 80vh; */
+  }
+  .header {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+  }
+  .heading {
+    margin-top: 1rem;
+  }
+  .image {
+    max-width: 350px;
+    justify-self: center;
+  }
+}

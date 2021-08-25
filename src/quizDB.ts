@@ -1,6 +1,7 @@
 import { Quiz } from "./utilities/quiz.types";
 
 export const quiz: Quiz = {
+  id: 11,
   name: "General Quiz",
   questions: [
     {
@@ -103,3 +104,106 @@ export const quiz: Quiz = {
 };
 
 // console.log(quiz.questions[2].negative);
+
+export const quizTwo: Quiz = {
+  id: 12,
+  name: "General Quiz",
+  questions: [
+    {
+      id: 1,
+      question: "How many time zones are there in Russia?",
+      points: 12,
+      negative: 2,
+      options: [
+        {
+          text: "5",
+          isRight: false,
+        },
+        {
+          text: "11",
+          isRight: true,
+        },
+      ],
+    },
+    {
+      id: 2,
+      question: "What’s the national animal of Australia?",
+      points: 12,
+      negative: 2,
+      options: [
+        {
+          text: "Jaguar",
+          isRight: false,
+        },
+        {
+          text: "Kangaroo",
+          isRight: true,
+        },
+      ],
+    },
+    {
+      id: 3,
+      question: "How many days does it take for the Earth to orbit the Sun?",
+      points: 12,
+      negative: 2,
+      options: [
+        {
+          text: "365",
+          isRight: true,
+        },
+        {
+          text: "363",
+          isRight: false,
+        },
+      ],
+    },
+    {
+      id: 4,
+      question: "Until 1923, what was the Turkish city of Istanbul called?",
+      points: 12,
+      negative: 2,
+      options: [
+        {
+          text: "Constantinople",
+          isRight: true,
+        },
+        {
+          text: "Turkistan",
+          isRight: false,
+        },
+      ],
+    },
+    {
+      id: 5,
+      question: "How many keys does a classic piano have?",
+      points: 12,
+      negative: 2,
+      options: [
+        {
+          text: "88",
+          isRight: true,
+        },
+        {
+          text: "76",
+          isRight: false,
+        },
+      ],
+    },
+    {
+      id: 6,
+      question: "Where was the first modern Olympic Games held?",
+      points: 12,
+      negative: 2,
+      options: [
+        {
+          text: "Athens",
+          isRight: true,
+        },
+        {
+          text: "Florida",
+          isRight: false,
+        },
+      ],
+    },
+  ],
+};

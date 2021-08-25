@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
 import { quiz } from "../quizDB";
-import { Quiz, Question, Option } from "../utilities/quiz.types";
+import { Quiz } from "../utilities/quiz.types";
 
 type providerValue = {
   state: stateType;
   dispatch: React.Dispatch<ACTIONTYPE>;
+  quizState: Quiz;
+  setQuizState: Function;
 };
 const QuizContext = createContext({} as providerValue);
 
@@ -75,7 +77,7 @@ export const QuizProvider: React.FC = ({ children }) => {
   }
 
   return (
-    <QuizContext.Provider value={{ state, dispatch }}>
+    <QuizContext.Provider value={{ state, dispatch, quizState, setQuizState }}>
       {children}
     </QuizContext.Provider>
   );

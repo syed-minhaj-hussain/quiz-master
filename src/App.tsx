@@ -9,9 +9,16 @@ import { PlayQuiz } from "./components/quiz/PlayQuiz";
 import { Home } from "./components/home/Home";
 import { Quizzes } from "./components/quizzes/Quizzes";
 import { useAuthContext } from "./context/AuthContext";
+import { setUncaughtExceptionCaptureCallback } from "process";
 
 function App() {
-  const { auth } = useAuthContext();
+  const { auth, setAuth } = useAuthContext();
+  // const getToken: string | any = localStorage?.getItem("token") || null;
+  // if (getToken !== null || getToken === undefined) {
+  //   const finalToken = JSON.parse(getToken) || null;
+  //   console.log({ finalToken });
+  //   setAuth(finalToken);
+  // }
   return (
     <div className="App">
       <Navbar />
@@ -20,7 +27,7 @@ function App() {
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <PrivateRoute auth={auth} element={<Login />} path="/playQuiz" />
+        <Route path="/playQuiz" element={auth ? <PlayQuiz /> : <Login />} />
         {/* <PrivateRoute auth={false} element={<Register />} path="/" /> */}
       </Routes>
       {/* <PlayQuiz /> */}
