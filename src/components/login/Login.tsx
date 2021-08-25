@@ -5,8 +5,8 @@ import { useAuthContext } from "../../context/AuthContext";
 import logStyle from "./login.module.css";
 
 export const Login = () => {
-  const [text, setText] = useState("");
-  const [password, setPassword] = useState("");
+  const [text, setText] = useState("Test@gmail.com");
+  const [password, setPassword] = useState("abc123");
   const { state } = useLocation();
   const navigate = useNavigate();
   const { auth, login } = useAuthContext();
@@ -16,7 +16,7 @@ export const Login = () => {
     if (auth) {
       navigate("/");
     }
-  }, []);
+  }, [auth]);
 
   return (
     <>

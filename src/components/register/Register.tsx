@@ -14,7 +14,7 @@ export const Register = () => {
     if (auth) {
       navigate("/");
     }
-  }, []);
+  }, [auth]);
   return (
     <>
       <div className={regStyle.container}>

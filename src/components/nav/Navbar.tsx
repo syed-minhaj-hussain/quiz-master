@@ -2,10 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import navStyle from "./nav.module.css";
 import { useAuthContext } from "../../context/AuthContext";
-import { FaHistory } from "react-icons/fa";
 import { FaListAlt } from "react-icons/fa";
-import { MdWatchLater } from "react-icons/md";
-import { AiFillLike } from "react-icons/ai";
 import { ImHome } from "react-icons/im";
 
 export const Navbar = () => {
