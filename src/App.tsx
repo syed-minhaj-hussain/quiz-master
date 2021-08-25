@@ -2,12 +2,12 @@ import "./App.css";
 import { Navbar } from "./components/nav/Navbar";
 import { Footer } from "./components/footer/Footer";
 import { Route, Routes } from "react-router";
-import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { PlayQuiz } from "./components/quiz/PlayQuiz";
 import { Home } from "./components/home/Home";
 import { Quizzes } from "./components/quizzes/Quizzes";
 import { useAuthContext } from "./context/AuthContext";
+import { Login } from "./components/login/Login";
 
 function App() {
   const { auth } = useAuthContext();
