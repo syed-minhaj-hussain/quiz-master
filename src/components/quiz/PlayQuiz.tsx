@@ -30,6 +30,7 @@ export const PlayQuiz = () => {
                 (option: Option) => {
                   return (
                     <button
+                      key={option.text}
                       className={playQuizModule.btn}
                       style={{
                         backgroundColor: `${

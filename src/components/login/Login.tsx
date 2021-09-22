@@ -14,7 +14,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (auth) {
-      navigate("/");
+      navigate("/quizzes");
     }
   }, [auth]);
 

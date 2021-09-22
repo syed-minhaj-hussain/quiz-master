@@ -46,7 +46,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         const authToken = response?.data?.authtoken;
         setAuth(authToken);
         localStorage.setItem("token", JSON.stringify(authToken));
-        navigate("/");
+        navigate("/quizzes");
       }
     } catch (error) {
       console.log({ error });
