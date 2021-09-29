@@ -61,6 +61,19 @@ export const Login = () => {
               </div>
               <input type="submit" value="Login" className={logStyle.btn} />
             </form>
+            <button
+              className={logStyle.btn}
+              style={{
+                width: "70%",
+                fontSize: "1rem",
+                padding: "0.5rem 0.5rem",
+              }}
+              onClick={() => {
+                login("Test@gmail.com", "abc123", state);
+              }}
+            >
+              Login As Guest
+            </button>
           </div>
           <p>
             Don't have an account ? <Link to="/register">register</Link>{" "}
