@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import navStyle from "./nav.module.css";
 import { useAuthContext } from "../../context/AuthContext";
 import { FaListAlt } from "react-icons/fa";
@@ -11,7 +11,20 @@ export const Navbar = () => {
 
   return (
     <nav className={navStyle.navbar}>
-      <div className={navStyle.brandTitle}>Quiz-Panel</div>
+      <div className={navStyle.brandTitle}>
+        {" "}
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            color: "#fff",
+            marginLeft: "0.25rem",
+          }}
+        >
+          {" "}
+          Quiz-Panel{" "}
+        </Link>
+      </div>
       <button
         className={navStyle.toggleButton}
         onClick={() => setIsActive((prev) => !prev)}

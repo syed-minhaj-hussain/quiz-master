@@ -2,7 +2,6 @@ import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-
 type ContextState = {
   setAuth: Function;
   logout: Function;
@@ -23,7 +22,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const getToken: string | any = localStorage?.getItem("token") || null;
     if (getToken !== null || getToken === undefined) {
       const finalToken = JSON.parse(getToken) || null;
-      console.log({ finalToken });
+      // console.log({ finalToken });
       setAuth(finalToken);
     }
   }, []);
@@ -42,14 +41,14 @@ export const AuthProvider: React.FC = ({ children }) => {
         }
       );
       if (response) {
-        console.log({ response });
+        // console.log({ response });
         const authToken = response?.data?.authtoken;
         setAuth(authToken);
         localStorage.setItem("token", JSON.stringify(authToken));
         navigate("/quizzes");
       }
     } catch (error) {
-      console.log({ error });
+      // console.log({ error });
     }
   };
   const register = async (text: string, email: string, password: string) => {

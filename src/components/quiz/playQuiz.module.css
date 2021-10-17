@@ -80,6 +80,7 @@
   border: 0.1rem solid #2f4e6f;
   /* border-radius: 2rem; */
   transition: 0.15s;
+  cursor: pointer;
 }
 .btn:hover {
   background-color: #fff;

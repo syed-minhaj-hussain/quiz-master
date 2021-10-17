@@ -21,6 +21,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/playQuiz" element={auth ? <PlayQuiz /> : <Login />} />
       </Routes>
+
       {/* <PlayQuiz /> */}
       <div className="footer">
         <Footer />

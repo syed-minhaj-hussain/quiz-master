@@ -43,6 +43,7 @@ input[type="submit"] {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   width: 70%;
+  cursor: pointer;
 }
 .btn {
   border: none;
@@ -51,6 +52,7 @@ input[type="submit"] {
   background-color: #000;
   color: #fff;
   border: 0.1rem solid black;
+  cursor: pointer;
 }
 .btn:hover {
   background-color: #fff;
